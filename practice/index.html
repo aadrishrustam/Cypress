@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA Practice Page</title>
+</head>
+<body>
+
+  <h1>Welcome to the QA Practice Page</h1>
+
+  <form id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username" /><br /><br />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password" /><br /><br />
+
+    <button type="submit" id="loginBtn">Login</button>
+  </form>
+
+  <hr />
+
+  <form id="user-info-form">
+    <label>
+      <input type="checkbox" name="skills" value="manual" /> Manual Testing
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="automation" /> Automation Testing
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="api" /> API Testing
+    </label><br /><br />
+
+    <label for="role">Role:</label>
+    <select id="role">
+      <option value="qa">QA Engineer</option>
+      <option value="dev">Developer</option>
+      <option value="pm">Project Manager</option>
+    </select><br /><br />
+
+    <button type="submit" id="submitBtn">Submit Info</button>
+  </form>
+
+</body>
+</html>
