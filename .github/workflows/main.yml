@@ -5,27 +5,28 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: practice
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18   # use 20 if your Cypress supports it
 
       - name: Install dependencies
-        run: |
-          cd practice
-          npm install
+        run: npm install
 
       - name: Run Cypress tests
-        run: |
-          cd practice
-          npx cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: practice
+          command: npx cypress run
