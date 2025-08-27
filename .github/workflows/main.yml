@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -20,13 +21,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18   # use 20 if your Cypress supports it
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests
-        uses: cypress-io/github-action@v6
-        with:
-          working-directory: practice
-          command: npx cypress run
+        run: npm test
